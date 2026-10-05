@@ -141,7 +141,7 @@
             margin-bottom: 40px;
         }
 
-        /* FIXED 1: Header & Mobile Navigation */
+        /* Header Navigation */
         header {
             position: sticky;
             top: 0;
@@ -242,7 +242,7 @@
             transform: translateY(-8.5px) rotate(-45deg);
         }
 
-        /* FIXED 2: Top Banner Section Gradient Blue Tint */
+        /* Top Banner Hero Section */
         .hero-section {
             background: url("image/bannerBG.jpg") no-repeat bottom center;
             padding: 70px 0 60px 0;
@@ -317,7 +317,7 @@
             display: block;
         }
 
-        /* FIXED 4: lifecycle-strip (Removed Icons & Added Clean Text Dividers) */
+        /* Lifecycle Strip */
         .lifecycle-strip {
             background: linear-gradient(135deg, #111827 0%, #243B7A 50%, #2878D4 100%);
             padding: 20px 0;
@@ -429,7 +429,7 @@
             color: var(--career-navy);
         }
 
-        /* FIXED 5: tile-content Height & Layout Increased */
+        /* Achievement Cards */
         .achievement-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -565,7 +565,7 @@
 
         .pull-quote-text {
             font-size: 1.25rem;
-            font-weight: 700;
+            font-weight: normal;
             color: var(--career-navy);
             line-height: 1.5;
         }
@@ -631,7 +631,7 @@
             color: var(--text-muted);
         }
 
-        /* FIXED 6: journey-grid Improvised Layout */
+        /* Journey Grid Layout */
         .lifecycle-journey {
             background: var(--white);
             padding: 45px 36px;
@@ -855,7 +855,7 @@
             margin-top: 16px;
         }
 
-        /* Deep Dive Services */
+        /* Deep Dive Services (BASE / DESKTOP STYLES) */
         .deep-dive-section {
             background: #FAFCFF;
         }
@@ -896,6 +896,7 @@
             font-weight: 800;
             color: var(--career-navy);
             margin-bottom: 12px;
+            line-height: 1.3;
         }
 
         .deep-dive-value {
@@ -903,6 +904,7 @@
             color: var(--future-blue);
             font-weight: 600;
             margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .content-box h4 {
@@ -922,6 +924,7 @@
             margin-bottom: 10px;
             font-size: 0.92rem;
             color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .content-box ul li::before {
@@ -938,6 +941,7 @@
             border-top: 1px solid var(--border-color);
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 10px;
             font-size: 0.85rem;
             font-weight: 700;
@@ -948,6 +952,8 @@
             border-radius: 6px;
             background: var(--cloud-grey);
             color: var(--text-muted);
+            font-size: 0.78rem;
+            display: inline-block;
         }
 
         .mini-tag.active {
@@ -1376,12 +1382,25 @@
             fill: currentColor;
         }
 
-        /* FIXED 3: Comprehensive Mobile Responsiveness Improvements */
+        /* COMPREHENSIVE RESPONSIVE DESIGN & MOBILE FIXES */
         @media (max-width: 980px) {
-			
-			.btn-primary.open-contact-modal { display: none;}
+            .btn-primary.open-contact-modal { display: none; }
             .section-padding { padding: 60px 0; }
-            .hero-grid, .about-grid, .deep-dive-grid, .cta-grid, .matrix-header-grid { grid-template-columns: 1fr; gap: 30px; }
+            
+            .hero-grid, .about-grid, .cta-grid, .matrix-header-grid { 
+                grid-template-columns: 1fr; 
+                gap: 30px; 
+            }
+            
+            /* Deep Dive Grid Adjustments */
+            .deep-dive-grid { 
+                grid-template-columns: 1fr; 
+                gap: 24px; 
+            }
+            .deep-dive-block { 
+                padding: 30px 24px; 
+            }
+            
             .pillars-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
             .matrix-flow-grid { grid-template-columns: repeat(2, 1fr); }
             .community-highlights { grid-template-columns: 1fr; }
@@ -1416,6 +1435,7 @@
             .node-circle { margin: 0; flex-shrink: 0; }
         }
 
+        /* TARGETED MOBILE RESPONSIVENESS (< 640px) */
         @media (max-width: 640px) {
             .hero-headline { font-size: 2.1rem; }
             .section-title { font-size: 1.8rem; }
@@ -1424,6 +1444,56 @@
             .lifecycle-container { justify-content: center; gap: 8px; }
             .lifecycle-divider { display: none; }
             .lifecycle-step { font-size: 0.8rem; padding: 6px 12px; }
+            
+            /* Deep Dive Section Mobile Specific Overrides */
+            .deep-dive-section {
+                padding: 45px 0;
+            }
+            .deep-dive-block {
+                padding: 20px 16px;
+                border-radius: 18px;
+                margin-bottom: 24px;
+            }
+            .deep-dive-header h3 {
+                font-size: 1.35rem;
+                margin-bottom: 10px;
+            }
+            .deep-dive-value {
+                font-size: 0.95rem;
+                margin-bottom: 16px;
+            }
+            .deep-dive-image-card {
+                border-radius: 12px;
+                margin-bottom: 16px;
+            }
+            .deep-dive-image-card img {
+                height: 170px;
+            }
+            .content-box h4 {
+                font-size: 0.95rem;
+            }
+            .content-box ul li {
+                font-size: 0.88rem;
+                padding-left: 20px;
+                margin-bottom: 8px;
+            }
+            .content-box[style*="padding: 28px"] {
+                padding: 18px 14px !important;
+                border-radius: 12px !important;
+            }
+            .mini-lifecycle-strip {
+                margin-top: 16px;
+                padding-top: 12px;
+                flex-wrap: wrap;
+                gap: 6px 8px;
+                font-size: 0.8rem;
+            }
+            .mini-tag {
+                padding: 3px 8px;
+                font-size: 0.72rem;
+            }
+
+            /* Modal & Misc */
             .contact-popup-box { padding: 30px 20px 22px; border-radius: 20px; }
             .contact-popup-box h2 { font-size: 24px; }
             .form-row { grid-template-columns: 1fr; }
@@ -1448,7 +1518,7 @@
 
             <div class="nav-right">
                 <a href="#partner" class="partner-link">Partner With Us</a>
-                <a href="#" class="btn-primary open-contact-modal">JOIN CAREERVERSE</a>
+                <a href="#" class="btn-primary open-contact-modal">JOIN THE COMMUNITY</a>
                 <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle Navigation Menu">
                     <span></span>
                     <span></span>
@@ -1464,7 +1534,6 @@
             <div class="hero-grid">
                 <div>
                     <span class="badge badge-blue">
-                        
                         CAREERVERSE STUDENT COMMUNITY
                     </span>
                     <h1 class="hero-headline">
@@ -1492,7 +1561,7 @@
         </div>
     </section>
 
-    <!-- FIXED 4: Lifecycle Strip with Clean Text Dividers -->
+    <!-- Lifecycle Strip -->
     <div class="lifecycle-strip">
         <div class="container lifecycle-container">
             <div class="lifecycle-step">
@@ -1523,7 +1592,6 @@
             <div class="about-grid">
                 <div>
                     <span class="badge badge-indigo">
-                       
                         About CareerVerse
                     </span>
                     <h2 class="section-title">Every Student Deserves a Career Path Beyond the Classroom.</h2>
@@ -1537,7 +1605,7 @@
                     </div>
 
                     <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        You might walk in through a course, a hackathon, a mentor conversation or an industry session. Wherever you start, the community carries you forward. Courses are one part of what we do—the rest is everything classrooms rarely offer: people, practice, pressure and proof.
+                        You might walk in through a course, a hackathon, a mentor conversation or an industry session. Wherever you start, the community carries you forward. You learn something, put it to work, test it against real challenges, show what you’ve built, and get closer to opportunities that matter. Courses are one part of what we do. The rest is everything classrooms rarely offer: <strong>people, practice, pressure and proof. </strong>
                     </p>
 
                     <div class="contrast-block">
@@ -1554,20 +1622,17 @@
 
                 <div>
                     <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--career-navy); margin-bottom: 16px;">What It Helps You Achieve</h3>
-                    <!-- FIXED 5: Increased Height & Padding Tile Cards -->
                     <div class="achievement-grid">
                         <div class="tile-card">
                             <img src="image/pic01.jpg" alt="Practical Skills" class="tile-img">
                             <div class="tile-content">
-                                
-                                <h4>Practical & Technical Skills</h4>
+                                <h4>Build practical skills</h4>
                             </div>
                         </div>
 
                         <div class="tile-card">
                             <img src="image/pic02.jpg" alt="Real Problems" class="tile-img">
                             <div class="tile-content">
-                                
                                 <h4>Work on Real Problems</h4>
                             </div>
                         </div>
@@ -1575,16 +1640,28 @@
                         <div class="tile-card">
                             <img src="image/pic03.jpg" alt="Teamwork" class="tile-img">
                             <div class="tile-content">
-                                
-                                <h4>Execution & Teamwork</h4>
+                                <h4>Develop the skills no exam tests</h4>
                             </div>
                         </div>
 
                         <div class="tile-card">
                             <img src="image/pic04.jpg" alt="Portfolio" class="tile-img">
                             <div class="tile-content">
-                                
-                                <h4>Visible Portfolio Proof</h4>
+                                <h4>Create visible proof</h4>
+                            </div>
+                        </div>
+						
+						 <div class="tile-card">
+                            <img src="image/pic16.jpg" alt="Portfolio" class="tile-img">
+                            <div class="tile-content">
+                                <h4>Meet people who can guide you</h4>
+                            </div>
+                        </div>
+						
+						 <div class="tile-card">
+                            <img src="image/pic17.jpg" alt="Portfolio" class="tile-img">
+                            <div class="tile-content">
+                                <h4>Move closer to opportunity</h4>
                             </div>
                         </div>
                     </div>
@@ -1594,7 +1671,6 @@
             <!-- Leadership Spotlight -->
             <div class="leadership-wrapper">
                 <span class="badge badge-blue">
-                    
                     Ecosystem Leadership
                 </span>
                 <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--career-navy);">Guided by Industry & Academic Experts</h3>
@@ -1606,7 +1682,10 @@
                             <div class="leader-role">Founder</div>
                             <div class="leader-name">Amarnath KR</div>
                             <div class="leader-bio">
-                                Business development and talent ecosystem professional with 18+ years of experience spanning talent acquisition, recruitment, and industry–academia partnerships. Head – Business Development at Student Tribe; previously with upGrad, TalentSprint, INSOFE, Options Executive Search, Kelly Services, and The MobileStore. B.Com from Osmania University.
+                               Amarnath KR is a recruitment and talent ecosystem professional with 18+ years of experience across executive search, talent acquisition, business development and industry partnerships.<br><br>
+                               His professional journey spans organisations including Options Executive Search, Kelly Services, TalentSprint, upGrad, INSOFE and Student Tribe, giving him extensive experience in recruitment, corporate hiring, client relationships and talent development.<br><br>
+                               Having worked closely with employers and thousands of students, Amarnath has built his career around connecting industry with talent and creating meaningful career pathways.<br><br>
+                               As the Founder of CareerVerse, his vision is to help students build their careers early through industry exposure, practical skills, mentorship and real-world opportunities.
                             </div>
                         </div>
                     </div>
@@ -1618,7 +1697,9 @@
                             <div class="leader-role">Mentor</div>
                             <div class="leader-name">Amit Ghosh</div>
                             <div class="leader-bio">
-                                Higher education and executive education leader with nearly 25 years of cross-industry experience. Director – Centre for Continuing Education at BML Munjal University; previously Vice President at BITSoM and Head – Executive Education at IMI. Leadership roles at FLAME University, INSOFE, and ISB. PGDM from SPJIMR, B.Tech from LIT Nagpur, PGP PRO from UCLA Anderson, ICF-certified Career Coach.
+                                Amit Ghosh is a higher education and executive education leader with nearly 25 years of cross-industry experience spanning Executive Education, Corporate Learning, Career Services, Admissions, Alumni Relations, Business Development and P&L management. He currently serves as Director – Centre for Continuing Education at BML Munjal University, where he is responsible for driving the growth of the CCE portfolio across open, customised, Hire-Train-Deploy and online degree programs, with a focus on product development, B2B/B2C sales, strategic alliances and global partnerships.<br><br>
+                                Previously, Amit was Vice President & Head – Executive Education at BITSoM, and Head – Executive Education, Career Services & PGDM Online at IMI, where he managed executive education, industry partnerships, placements, alumni engagement and P&L responsibilities. His earlier leadership roles include FLAME University, INSOFE and Indian School of Business, where he was involved in building executive education portfolios, developing certificate and customised programs, enterprise sales and managing significant revenue portfolios.<br><br>
+                                Amit combines business development, product strategy, corporate partnerships and academic ecosystem building, with experience working with leading Indian and global organisations on transformational initiatives. He holds a PGDM in Marketing & Operations from SPJIMR, a B.Tech in Chemical Engineering from LIT Nagpur, and PGP PRO from UCLA Anderson School of Management, and is an ICF-certified Career Coach. 
                             </div>
                         </div>
                     </div>
@@ -1680,7 +1761,53 @@
                 </div>
             </div>
 
-            
+            <!-- Student Lifecycle Journey -->
+            <div class="lifecycle-journey">
+                <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--career-navy); text-align: center;">The Student Lifecycle</h3>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px;">How capability is built and made visible</p>
+                
+                <div class="journey-grid">
+                    <div class="journey-node active">
+                        <div class="node-circle">
+                            <span>📚</span>
+                        </div>
+                        <div class="node-title">1. LEARN</div>
+                        <div class="node-desc">Build skills beyond the syllabus</div>
+                    </div>
+
+                    <div class="journey-node">
+                        <div class="node-circle">
+                            <span>⚙️</span>
+                        </div>
+                        <div class="node-title">2. APPLY</div>
+                        <div class="node-desc">Use it on something real</div>
+                    </div>
+
+                    <div class="journey-node">
+                        <div class="node-circle">
+                            <span>🥊</span>
+                        </div>
+                        <div class="node-title">3. COMPETE</div>
+                        <div class="node-desc">Test against your peers</div>
+                    </div>
+
+                    <div class="journey-node">
+                        <div class="node-circle">
+                            <span>📊</span>
+                        </div>
+                        <div class="node-title">4. DEMONSTRATE</div>
+                        <div class="node-desc">Show, don't just tell</div>
+                    </div>
+
+                    <div class="journey-node">
+                        <div class="node-circle">
+                            <span>🎯</span>
+                        </div>
+                        <div class="node-title">5. OPPORTUNITY</div>
+                        <div class="node-desc">Let your proof open doors</div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Community Highlights -->
             <div id="community">
@@ -1732,7 +1859,6 @@
                     <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=500&q=80" alt="Industry Connect" class="service-img">
                     <div class="service-body">
                         <div>
-                            
                             <h3>INDUSTRY CONNECT</h3>
                             <p>Meet professionals. Understand the industry. See how your skills are used in the real world.</p>
                         </div>
@@ -1747,7 +1873,6 @@
                     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Competitions" class="service-img">
                     <div class="service-body">
                         <div>
-                            
                             <h3>COMPETITIONS & HACKATHONS</h3>
                             <p>Solve. Build. Present. Compete. Put your skills into action under real challenge.</p>
                         </div>
@@ -1762,7 +1887,6 @@
                     <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Courses" class="service-img">
                     <div class="service-body">
                         <div>
-                            
                             <h3>COURSES & SKILL BUILDING</h3>
                             <p>Build practical, career-relevant skills through structured learning that moves beyond theory.</p>
                         </div>
@@ -1777,7 +1901,6 @@
                     <img src="image/05.jpg" alt="Mentoring" class="service-img">
                     <div class="service-body">
                         <div>
-                            
                             <h3>MENTORING & COACHING</h3>
                             <p>Get direction, feedback and guidance from people who can help you decide what to learn and how to prepare.</p>
                         </div>
@@ -1805,7 +1928,6 @@
                     <div>
                         <div class="deep-dive-header">
                             <span class="badge badge-indigo">
-                                
                                 Service 01
                             </span>
                             <h3>Don’t Wait Until Graduation to Understand the Industry.</h3>
@@ -1834,7 +1956,7 @@
                                 <li>Confidence born from genuine exposure</li>
                             </ul>
                             <div class="mini-lifecycle-strip">
-                                Lifecycle: 
+                                <span>Lifecycle:</span> 
                                 <span class="mini-tag active">APPLY</span>
                                 <span class="mini-tag active">DEMONSTRATE</span>
                                 <span class="mini-tag active">OPPORTUNITY</span>
@@ -1877,7 +1999,7 @@
                                 <li>Soft skills: teamwork, communication, composure under pressure</li>
                             </ul>
                             <div class="mini-lifecycle-strip">
-                                Lifecycle: 
+                                <span>Lifecycle:</span> 
                                 <span class="mini-tag active">APPLY</span>
                                 <span class="mini-tag active">COMPETE</span>
                                 <span class="mini-tag active">DEMONSTRATE</span>
@@ -1919,7 +2041,7 @@
                                 <li>A stronger career profile, ready for the next step</li>
                             </ul>
                             <div class="mini-lifecycle-strip">
-                                Lifecycle: 
+                                <span>Lifecycle:</span> 
                                 <span class="mini-tag active">LEARN</span>
                                 <span class="mini-tag active">APPLY</span>
                                 <span class="mini-tag active">DEMONSTRATE</span>
@@ -1962,7 +2084,7 @@
                                 <li>Relationships with people who understand the road ahead</li>
                             </ul>
                             <div class="mini-lifecycle-strip">
-                                Lifecycle: 
+                                <span>Lifecycle:</span> 
                                 <span class="mini-tag active">LEARN</span>
                                 <span class="mini-tag active">DEMONSTRATE</span>
                                 <span class="mini-tag active">OPPORTUNITY</span>
@@ -2059,7 +2181,7 @@
                     </p>
                 </div>
                 <div class="cta-img-card">
-                    <img src="image/banner02.jpg" alt="Students building their future">
+                    <img src="image/contact.jpg" alt="Students building their future">
                 </div>
             </div>
         </div>
@@ -2074,7 +2196,6 @@
                     <p style="font-size: 0.9rem; margin-bottom: 20px;">
                         Build real skills, real proof, and real connections while you’re still in college. Build your career before you need a job.
                     </p>
-                    
                 </div>
 
                 <div class="footer-col">
@@ -2216,9 +2337,7 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
 
-      /* =========================
-         MOBILE NAVIGATION TOGGLE
-      ========================= */
+      /* MOBILE NAVIGATION TOGGLE */
       const mobileToggleBtn = document.getElementById("mobileToggleBtn");
       const navLinks = document.getElementById("navLinks");
 
@@ -2228,7 +2347,6 @@
           navLinks.classList.toggle("active");
         });
 
-        // Close menu when clicking any nav link
         navLinks.querySelectorAll("a").forEach(function (link) {
           link.addEventListener("click", function () {
             mobileToggleBtn.classList.remove("open");
@@ -2237,9 +2355,7 @@
         });
       }
 
-      /* =========================
-         CONTACT FORM POPUP MODAL
-      ========================= */
+      /* CONTACT FORM POPUP MODAL */
       const contactPopup = document.getElementById("contactPopup");
       const closeContactFormButton = document.getElementById("closeContactForm");
       const careerCircleForm = document.getElementById("careerCircleForm");
